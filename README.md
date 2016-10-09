@@ -11,4 +11,4 @@
 
 ###关于使用：
 > 用命令行进入项目根目录下，输入npm install
-> 输入npm run dev运行
+> 安装依赖成功后，输入npm run dev运行
