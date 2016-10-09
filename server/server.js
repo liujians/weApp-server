@@ -51,9 +51,49 @@ app.get("/getUser.php",function(req,res){
 	res.send(list);
 })
 app.post("/getMsg.php",function(req,res){
-	console.log("请求到了getMsg")
 	var id = req.body.id
+	// console.log(id)
 	var data_1 = [
+          {
+            img:"../../image/adam.jpg",
+            text:"你好",
+            me:false
+          },
+          {
+            img:"../../image/adam.jpg",
+            text:"哈哈",
+            me:true
+          },
+          {
+            img:"../../image/adam.jpg",
+            text:"你好",
+            me:false
+          },
+          {
+            img:"../../image/adam.jpg",
+            text:"哈哈",
+            me:true
+          },
+          {
+            img:"../../image/adam.jpg",
+            text:"你好",
+            me:false
+          },
+          {
+            img:"../../image/adam.jpg",
+            text:"哈哈",
+            me:true
+          },
+          {
+            img:"../../image/adam.jpg",
+            text:"你好",
+            me:false
+          },
+          {
+            img:"../../image/adam.jpg",
+            text:"哈哈",
+            me:true
+          },
           {
             img:"../../image/adam.jpg",
             text:"你好",
