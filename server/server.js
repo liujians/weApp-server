@@ -186,6 +186,94 @@ app.post("/getMsg.php",function(req,res){
 		case "5":res.send(data_5);break;
 	}
 })
+app.get("/getMoments.php",function(req,res){
+	var data = [
+		{
+			avaImg:"/image/adam.jpg",
+			name:"王浩",
+			text:"这是示例文字，这是示例文字，这是示例文字，这是示例文字，这是示例文字，这是示例文字",
+			img:[
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				}
+			],
+			address:"成都",
+			time:"40分钟前"
+		},
+		{
+			avaImg:"/image/mike.png",
+            name:"廖芳樱",
+            text:"这是示例文字，这是示例文字，这是示例文字，这是示例文字，这是示例文字，这是示例文字",
+            time:"昨天"
+		},
+		{
+			avaImg:"/image/perry.png",
+            name:"邓福滨",
+			img:[
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				}
+			],
+			address:"火星",
+			time:"昨天"
+		},
+		{
+			avaImg:"/image/ben.png",
+			name:"成凤杰",
+			text:"这是示例文字，这是示例文字，这是示例文字，这是示例文字，这是示例文字，这是示例文字",
+			img:[
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				},
+				{
+					imgUrl:"/image/me.jpg"
+				}
+			],
+			address:"朝鲜",
+			time:"昨天"
+		}
+	]
+	res.send(data);
+})
 app.set("port",8999);
 app.listen(app.get("port"),function(){
     console.log("服务器已启动...");

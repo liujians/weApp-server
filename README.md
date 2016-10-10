@@ -6,7 +6,8 @@
 > [https://github.com/liujians/WeApp](https://github.com/liujians/WeApp "https://github.com/liujians/WeApp")
 
 ###项目历程：
-- 10月08日——将好友列表，消息记录数据存入server中，从server请求数据，为了方便没有用数据库，只是临时写了JSON，用作示例wx.request请求数据(分为一个get请求,一个post请求)。server 部分为单独一个项目，需要下载跑起来才能运行此项目
+- 10月09日——将好友列表，消息记录数据存入server中，从server请求数据，为了方便没有用数据库，只是临时写了JSON，用作示例wx.request请求数据(分为一个get请求,一个post请求)。server 部分为单独一个项目，需要下载跑起来才能运行此项目
+- 10月10日——将朋友圈数据和接口加入
 
 
 ###关于使用：
