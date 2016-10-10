@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded());
 app.get("/getUser.php",function(req,res){
 	var list=[
         {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             name:"王浩",
             message:"哈哈",
             time:"22:00",
@@ -16,7 +16,7 @@ app.get("/getUser.php",function(req,res){
             id:"1"
         },
         {
-            img:"../../image/ben.png",
+            img:"/image/ben.png",
             name:"成凤杰",
             message:"干什么呢",
             time:"17:30",
@@ -24,7 +24,7 @@ app.get("/getUser.php",function(req,res){
             id:"2"
         },
         {
-            img:"../../image/max.png",
+            img:"/image/max.png",
             name:"梁雨",
             message:"O(∩_∩)O",
             time:"16:00",
@@ -32,7 +32,7 @@ app.get("/getUser.php",function(req,res){
             id:"3"
         },
         {
-            img:"../../image/mike.png",
+            img:"/image/mike.png",
             name:"廖芳樱",
             message:"那先不管了",
             time:"14:00",
@@ -40,7 +40,7 @@ app.get("/getUser.php",function(req,res){
             id:"4"
         },
         {
-            img:"../../image/perry.png",
+            img:"/image/perry.png",
             name:"邓福滨",
             message:"可以",
             time:"10:00",
@@ -55,125 +55,125 @@ app.post("/getMsg.php",function(req,res){
 	// console.log(id)
 	var data_1 = [
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"你好",
             me:false
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"哈哈",
             me:true
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"你好",
             me:false
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"哈哈",
             me:true
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"你好",
             me:false
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"哈哈",
             me:true
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"你好",
             me:false
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"哈哈",
             me:true
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"你好",
             me:false
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"哈哈",
             me:true
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"你好",
             me:false
           },
           {
-            img:"../../image/adam.jpg",
+            img:"/image/adam.jpg",
             text:"哈哈",
             me:true
           }
         ]
     var data_2 = [
           {
-            img:"../../image/ben.png",
+            img:"/image/ben.png",
             text:"干什么呢",
             me:false
           },
           {
-            img:"../../image/ben.png",
+            img:"/image/ben.png",
             text:"干什么呢",
             me:false
           },
           {
-            img:"../../image/ben.png",
+            img:"/image/ben.png",
             text:"干什么呢",
             me:false
           }
         ];
     var data_3 = [
           {
-            img:"../../image/max.png",
+            img:"/image/max.png",
             text:"hi",
             me:false
           },
           {
-            img:"../../image/ben.png",
+            img:"/image/ben.png",
             text:"hi",
             me:true
           },
           {
-            img:"../../image/max.png",
+            img:"/image/max.png",
             text:"O(∩_∩)O",
             me:false
           }
         ];
     var data_4 = [
           {
-            img:"../../image/mike.png",
+            img:"/image/mike.png",
             text:"搞好了吗",
             me:false
           },
           {
-            img:"../../image/mike.png",
+            img:"/image/mike.png",
             text:"没有",
             me:true
           },
           {
-            img:"../../image/mike.png",
+            img:"/image/mike.png",
             text:"那先不管了",
             me:false
           }
         ];
     var data_5 = [
           {
-            img:"../../image/perry.png",
+            img:"/image/perry.png",
             text:"请我吃饭",
             me:true
           },
           {
-            img:"../../image/perry.png",
+            img:"/image/perry.png",
             text:"可以",
             me:false
           }
