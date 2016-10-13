@@ -1,6 +1,9 @@
-var express = require('express');    
+var express = require('express'); 
+var fs = require('fs');   
+var formidable = require('formidable');   
 var app = express();   
 var bodyParser = require('body-parser');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -48,6 +51,10 @@ app.get("/getUser.php",function(req,res){
             id:"5"
         }
     ]
+    for(var i = 0;i<list.length;i++){
+    	// console.log(list[i][count])
+    	list[i].count = parseInt(Math.random()*10)
+    }
 	res.send(list);
 })
 app.post("/getMsg.php",function(req,res){
@@ -274,6 +281,49 @@ app.get("/getMoments.php",function(req,res){
 	]
 	res.send(data);
 })
+app.post("/upload.php",function(req,res){
+	var form = new formidable();
+	form.encoding = 'utf-8';		//设置编辑
+    form.uploadDir = 'upload/'	 //设置上传目录
+    form.keepExtensions = true;	 //保留后缀
+    form.maxFieldsSize = 2 * 1024 * 1024;   //文件大小
+    form.parse(req, function(err, fields, files){
+    	var msg="上传成功，请到服务器upload文件夹查看";
+    	if (err) {
+    	  msg = err;
+	      return;		
+	    }  
+	    var extName = '';  //后缀名
+	    switch (files.test.type) {
+	      case 'application/octet-stream':
+	        extName = 'png';
+	        break;	 
+	    }
+	    if(extName == ''){
+	    	res.send("不支持此类文件上传");
+	    }
+    	// console.log(files.test.type) 
+
+	    var avatarName = Math.random() + '.' + extName;
+	    var newPath = form.uploadDir + avatarName;
+
+	    // console.log(newPath);
+	    fs.rename(files.test.path, newPath);  //重命名
+
+	    res.send(msg);
+    })
+	
+})
+app.get("/download",function(req,res){
+	res.download("upload/test.png");
+})
+// fs.readFile("sss.txt",{encoding: 'utf8'},function (err, data) {
+//     if(err) {
+//      console.error(err);
+//      return;
+//     }
+//     console.log(data);
+// })
 app.set("port",8999);
 app.listen(app.get("port"),function(){
     console.log("服务器已启动...");

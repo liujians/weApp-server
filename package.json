@@ -18,6 +18,7 @@
     "css-loader": "^0.25.0",
     "express": "^4.13.3",
     "file-loader": "^0.8.4",
+    "formidable": "^1.0.17",
     "function-bind": "^1.0.2",
     "jquery": "^3.1.1",
     "json-loader": "^0.5.4",
