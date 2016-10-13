@@ -1,12 +1,32 @@
 var express = require('express'); 
-var fs = require('fs');   
-var formidable = require('formidable');   
-var app = express();   
-var bodyParser = require('body-parser');
+fs = require('fs'), 
+formidable = require('formidable'),   
+app = express(),
+bodyParser = require('body-parser'); 
 
+var server = require('http').createServer()
+  , url = require('url')
+  , WebSocketServer = require('ws').Server
+  , wss = new WebSocketServer({ server: server })
+  , port = 8022;
 
+   
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+
+wss.on('connection', function connection(ws) {
+  var location = url.parse(ws.upgradeReq.url, true);
+  ws.on('message', function incoming(message) {
+  	console.log("你给我的是："+message)
+    ws.send("你刚刚给我的是"+message)
+  });
+  ws.send('服务端发送:链接成功');
+});
+wss.on('close', function close(ws) {
+	console.log(ws);
+  	ws.send("服务端发送:链接关闭")
+});
+
 
 app.get("/getUser.php",function(req,res){
 	var list=[
@@ -317,14 +337,14 @@ app.post("/upload.php",function(req,res){
 app.get("/download",function(req,res){
 	res.download("download/test.png");
 })
-// fs.readFile("sss.txt",{encoding: 'utf8'},function (err, data) {
-//     if(err) {
-//      console.error(err);
-//      return;
-//     }
-//     console.log(data);
-// })
+app.get("/wsConnect.php",function(req,res){
+
+})
+ 
 app.set("port",8999);
 app.listen(app.get("port"),function(){
     console.log("服务器已启动...");
 })
+
+server.on('request', app);
+server.listen(port, function () { console.log('websocket Listening on ' + server.address().port) });
