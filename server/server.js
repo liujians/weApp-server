@@ -315,7 +315,7 @@ app.post("/upload.php",function(req,res){
 	
 })
 app.get("/download",function(req,res){
-	res.download("upload/test.png");
+	res.download("download/test.png");
 })
 // fs.readFile("sss.txt",{encoding: 'utf8'},function (err, data) {
 //     if(err) {
